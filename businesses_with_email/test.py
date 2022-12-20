@@ -24,14 +24,20 @@
 #     yield {'titletext': title, 'description': description
 
 
-def decodeEmail(e):
-    de = ""
-    k = int(e[:2], 16)
+# def decodeEmail(e):
+#     de = ""
+#     k = int(e[:2], 16)
+#
+#     for i in range(2, len(e)-1, 2):
+#         de += chr(int(e[i:i+2], 16)^k)
+#
+#     return de
 
-    for i in range(2, len(e)-1, 2):
-        de += chr(int(e[i:i+2], 16)^k)
+# print (decodeEmail('1a78757878636973775a787f7d68756f6a3479757734697d'))
 
-    return de
-
-print (decodeEmail('1a78757878636973775a787f7d68756f6a3479757734697d'))
+# email = 'Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99eaf8f5fcead9f8ebf0f8f7b7faf6f4b7eafe">[email protected]</a><br>'
+#
+# a = email[email.index('data-cfemail='):email.index('>') + 1].replace('data-cfemail="', '').replace('">', '')
+# print(a)
+# print(decodeEmail(a))
 
