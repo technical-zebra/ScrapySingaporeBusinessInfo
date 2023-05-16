@@ -21,10 +21,14 @@ class BusinessesWithEmailPipeline(object):
         adapter = ItemAdapter(item)
         business_name = adapter.get("business_name")
         email = adapter.get("email")
-        if email not in self.df['email'].values:
-            df2 = pd.DataFrame({"business_name": [business_name],
-                                "email": [email]})
-            self.df = pd.concat([self.df, df2])
+        # if email not in self.df['email'].values:
+        #     df2 = pd.DataFrame({"business_name": [business_name],
+        #                         "email": [email]})
+        #     self.df = pd.concat([self.df, df2])
+
+        df2 = pd.DataFrame({"business_name": [business_name],
+                            "email": [email]})
+        self.df = pd.concat([self.df, df2])
         return item
 
     def open_spider(self, spider):
